@@ -1,0 +1,172 @@
+/* GENERAL */
+
+/*
+off-black: #1D1D1B
+off-white: #E6EBE0
+*/
+
+
+html, body {
+	width: auto;
+	height: auto;
+	font-family: Arial;
+	text-align: center;		
+	background-color: #1D1D1B;
+	}
+
+h1 {
+	float: left;
+	margin-right: 50px;
+	margin-left: 20px;
+	color: white;
+	}
+
+.button {
+	height: 50px;
+	width: 250px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* LAYOUT */
+
+.AmbiencePlayerBox {
+	display: grid;
+	grid-template-columns: 67% 33%;
+	grid-template-rows: 10% 45% 45%;
+	grid-template-areas: 
+		"HeaderBox GlobalMixer"
+		"LocalMixerBox GlobalMixer"
+		"LocalMixerBox miscFeatures"
+}
+
+.HeaderBox {;
+	grid-area: HeaderBox;
+	display: grid;
+	align-items: center;
+	grid-template-columns: 33% 33% 33%;
+}
+
+.LocalMixerBox {
+	/*border: 2px solid black;*/
+	grid-area: LocalMixerBox;
+}
+
+.GlobalMixer {
+	/*border: 2px solid black;*/
+	height: 747px;
+	grid-area: GlobalMixer;
+}
+
+.miscFeatures {
+	/*border: 2px solid black;*/
+	height: 333px;
+	grid-area: miscFeatures;
+}
+
+/* LOCALMIXER */
+
+.LocalMixerBoxGrid {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: 33% 33% 33%;
+	grid-template-areas: 
+		"topleft topright"
+		"midleft midright"
+		"bottomleft bottomright"
+}
+
+.LocalMixerBoxGridItem {
+	width: 600px;
+	height: 300px;
+
+	display: grid;
+	grid-template-columns: 150px 250px 100px 100px;
+	grid-template-rows: 270px 30px;
+	grid-template-areas:
+		"player player player volume"
+		"update vID fIn fOut";
+
+	margin: 10px;
+	background-color: #353531;
+	border-radius: 7px;
+	filter: drop-shadow(5px 5px 3px);
+}
+
+.LocalPlayer {
+	grid-area: player;
+
+	margin: 7px;
+	border-radius: 7px;
+	filter: drop-shadow(3px 3px 3px);
+}
+
+/* BUTTONS  */
+
+.updateButton {
+	grid-area: update;
+
+	margin: 4px;
+	margin-left: 7px;
+	border-radius: 4px;
+	background-color: #E6EBE0;
+	transition: 0.3s;
+}
+
+.fadeInButton {
+	grid-area: fIn;
+
+	margin: 4px;
+	border-radius: 4px;
+	background-color: #E6EBE0;
+	transition: 0.3s;
+}
+
+.fadeOutButton {
+	grid-area: fOut;
+
+	margin: 4px;
+	margin-right: 7px;
+	border-radius: 4px;
+	background-color: #E6EBE0;
+	transition: 0.3s;
+}
+
+.updateButton:hover, .fadeInButton:hover, .fadeOutButton:hover {
+	transform: scale(0.95);
+	background-color: #B1C0D2;
+}
+
+.VideoIDContainer {
+	grid-area: vID;
+	display: flex;
+	justify-content: center;
+
+	width: 200px;
+}
+
+.sliderContainer {
+	display: flex;
+	justify-content: center;
+	grid-area: volume;
+
+	margin: 7px;
+	background: #4A4A45;
+	border-radius: 7px;
+	filter: drop-shadow(3px 3px 3px);
+}
+
+input.slider {
+	transform: rotate(270deg);
+}
+
+/* GLOBALMIXER */
+
+/* MISCFEATURES */
+#libraryEmbed {
+	width: 600px;
+	height:  300px;
+
+	border-radius: 7px;
+}

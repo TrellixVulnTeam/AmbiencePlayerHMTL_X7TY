@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ambience Player</title>
+</head>
+
+<!-- Loading Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="{{url_for('static', filename='playerManager.css')}}">
+
+<body>
+	<div class="AmbiencePlayerBox">
+		<div class="HeaderBox" id="HeaderBox" style="grid-area: HeaderBox">
+			<h1>Ambience Player</h1>
+			<button onclick="addPlayer()">Add Player</button>
+			<button onclick="removePlayer()">Remove Player</button>
+			<!-- <button onclick="loadPlayers()">DEBUG: load Players</button> -->
+		</div>
+		<div class="LocalMixerBox" id="LocalMixerBox" style="grid-area: LocalMixerBox">
+			<div class="LocalMixerBoxGrid" id="LocalMixerBoxGrid">
+				
+			</div>
+		</div>
+		<div class="GlobalMixer" style="grid-area: GlobalMixer">
+			
+		</div>
+		<div class="miscFeatures" id="miscFeatures" style="grid-area: miscFeatures">
+			<iframe id="libraryEmbed" src="https://miro.com/app/live-embed/o9J_kiyZJm0=/?moveToViewport=-4095,-1591,3096,2618" frameBorder="0" scrolling="no" allowFullScreen></iframe>
+		</div>
+	</div>
+	<div id="PlayerHolderContainer" class="PlayerHolderContainer" style="display: none;">
+	</div>
+
+	<template id="LocalMixerBoxGridItemTEMPLATE">
+		<div class="LocalMixerBoxGridItem">
+			<div id="LocalPlayer" class="LocalPlayer" ></div>
+			<div id="sliderContainer" class="sliderContainer">
+				<input id="VolumeSlider" class="slider" type="range" min="0" max="100" value="50" oninput="updateVolume()" onchange="updateVolume()">
+			</div>
+			<button id="updateButton" class="updateButton" onclick="updateVideo()">Update</button>
+			<div class="VideoIDContainer" style="grid-area: vID">
+				<input id="VideoIDInput" type="text" style="width: auto"></input>
+			</div>
+			<button id="fadeInButton" class="fadeInButton" onclick="fadeIn()">Fade In</button>
+			<button id="fadeOutButton" class="fadeOutButton" onclick="fadeOut()">Fade Out</button>
+		</div>
+	</template>
+</body>
+
+<!-- JS for Managing Players -->
+<script src="{{url_for('static', filename='playerManager.js')}}"></script>
+
+<!-- JS Loading YT PLayers -->
+<script src="{{url_for('static', filename='playerLoader.js')}}"></script>
+
+</html>

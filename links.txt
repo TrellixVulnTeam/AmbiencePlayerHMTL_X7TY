@@ -1,0 +1,7 @@
+https://stackoverflow.com/questions/17012886/loading-multiple-video-players-with-youtube-api
+
+https://stackoverflow.com/questions/13388379/js-how-to-replace-html-element-with-another-element-text-represented-in-string
+
+https://developers.google.com/youtube/iframe_api_reference?hl=de
+
+https://css-tricks.com/reversing-an-easing-curve/
