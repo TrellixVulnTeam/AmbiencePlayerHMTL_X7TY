@@ -9,25 +9,19 @@ off-white: #E6EBE0
 html, body {
 	width: auto;
 	height: auto;
-	font-family: Arial;
+	font-family: bourbon, serif;
 	text-align: center;		
-	background-color: #1D1D1B;
+	background-color: #12141A;
 	}
 
 h1 {
+	letter-spacing: 10px;
+	font-size: 45px;
 	float: left;
 	margin-right: 50px;
 	margin-left: 20px;
 	color: white;
 	}
-
-.button {
-	height: 50px;
-	width: 250px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
 
 /* LAYOUT */
 
@@ -46,6 +40,7 @@ h1 {
 	display: grid;
 	align-items: center;
 	grid-template-columns: 33% 33% 33%;
+	grid-template-areas: "s1 s2 s3";
 }
 
 .LocalMixerBox {
@@ -89,9 +84,10 @@ h1 {
 		"update vID fIn fOut";
 
 	margin: 10px;
-	background-color: #353531;
+	padding: 5px;
+	background-color: #181A22;
 	border-radius: 7px;
-	filter: drop-shadow(5px 5px 3px);
+	filter: drop-shadow(5px 5px 3px #080E14);
 }
 
 .LocalPlayer {
@@ -99,43 +95,47 @@ h1 {
 
 	margin: 7px;
 	border-radius: 7px;
-	filter: drop-shadow(3px 3px 3px);
+	filter: drop-shadow(3px 3px 3px #080E14);
 }
 
 /* BUTTONS  */
 
+button {
+	width: fit-content;
+	height: auto;
+	font-family: Arial Black, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	letter-spacing: 1px;
+
+	color: #E6EBE0;
+	margin: 4px;
+	border-radius: 4px;
+	/*background-color: #E6EBE0;*/
+	background: transparent;
+	transition: 0.3s;
+	border: transparent;
+}
+
 .updateButton {
 	grid-area: update;
 
-	margin: 4px;
 	margin-left: 7px;
-	border-radius: 4px;
-	background-color: #E6EBE0;
-	transition: 0.3s;
 }
 
 .fadeInButton {
 	grid-area: fIn;
-
-	margin: 4px;
-	border-radius: 4px;
-	background-color: #E6EBE0;
-	transition: 0.3s;
 }
 
 .fadeOutButton {
 	grid-area: fOut;
 
-	margin: 4px;
 	margin-right: 7px;
-	border-radius: 4px;
-	background-color: #E6EBE0;
-	transition: 0.3s;
 }
 
-.updateButton:hover, .fadeInButton:hover, .fadeOutButton:hover {
+button:hover {
 	transform: scale(0.95);
-	background-color: #B1C0D2;
+	background-color: #08090C;
 }
 
 .VideoIDContainer {
@@ -152,9 +152,9 @@ h1 {
 	grid-area: volume;
 
 	margin: 7px;
-	background: #4A4A45;
+	background: #2F353D;
 	border-radius: 7px;
-	filter: drop-shadow(3px 3px 3px);
+	filter: drop-shadow(3px 3px 3px #080E14);
 }
 
 input.slider {
