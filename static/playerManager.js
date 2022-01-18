@@ -13,24 +13,34 @@ function getNextPlayerPosition() {
 		nextPosition = "topleft";
 		break;
 	case 1:
-		nextPosition = "topright";
+		nextPosition = "topmid";
 		break;
 	case 2:
-		nextPosition = "midleft";
+		nextPosition = "topright";
 		break;
 	case 3:
-		nextPosition = "midright";
+		nextPosition = "midleft";
 		break;
 	case 4:
-		nextPosition = "bottomleft";
+		nextPosition = "midmid";
 		break;
 	case 5:
-		nextPosition = "bottomright";
+		nextPosition = "midright";
 		break;
 	case 6:
+		nextPosition = "bottomleft";
+		break;
+	case 7:
+		nextPosition = "bottommid";
+		break;
+	case 8:
+		nextPosition = "bottomright";
+		break;
+	case 9:
 		nextPosition = "none";
 		break;
 	}
+
 
 	return nextPosition;
 }
@@ -62,7 +72,7 @@ function addPlayer() {
 
 		//Pickping & Replacing player from PlayerHolder
 		var i = 0
-		while(i < 6) {
+		while(i < PlayerHolder.length) {
 					   
 		   	try {
 			
@@ -158,7 +168,10 @@ function fadeIn() {
 	let playerState = PlayerHolder[currentMixer[1]].div.getPlayerState();
 	PlayerHolder[currentMixer[1]].div.setVolume(0);
 
+	if(playerState == 2) {
 
+		PlayerHolder[currentMixer[1]].div.playVideo();
+	}
 	
 	var handler;
 	function increase(){
@@ -172,11 +185,8 @@ function fadeIn() {
 		PlayerHolder[currentMixer[1]].div.setVolume(parseInt(volSlider.value));
 	}
 
-	handler = window.setInterval(increase, 50);
-	if(playerState == 2) {
 
-		PlayerHolder[currentMixer[1]].div.playVideo();
-	}
+	handler = window.setInterval(increase, 50);
 }
 
 function fadeOut() {
@@ -192,6 +202,7 @@ function fadeOut() {
 		if (parseInt(volSlider.value) <= endValue) {
 
 			window.clearInterval(handler);
+			PlayerHolder[currentMixer[1]].div.pauseVideo();
 		}
 		volSlider.value = parseInt(volSlider.value) - 1;
 		PlayerHolder[currentMixer[1]].div.setVolume(parseInt(volSlider.value));

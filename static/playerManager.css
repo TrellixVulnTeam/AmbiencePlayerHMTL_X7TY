@@ -31,16 +31,17 @@ h1 {
 	grid-template-rows: 10% 45% 45%;
 	grid-template-areas: 
 		"HeaderBox GlobalMixer"
-		"LocalMixerBox GlobalMixer"
-		"LocalMixerBox miscFeatures"
+		"LocalMixerBox LocalMixerBox"
+		"LocalMixerBox LocalMixerBox"
 }
 
 .HeaderBox {;
 	grid-area: HeaderBox;
 	display: grid;
 	align-items: center;
-	grid-template-columns: 33% 33% 33%;
-	grid-template-areas: "s1 s2 s3";
+	justify-content: center;
+	grid-template-columns: 33% 13% 10% 10%;
+	grid-template-areas: "s1 s2 s3 s4";
 }
 
 .LocalMixerBox {
@@ -50,7 +51,6 @@ h1 {
 
 .GlobalMixer {
 	/*border: 2px solid black;*/
-	height: 747px;
 	grid-area: GlobalMixer;
 }
 
@@ -64,12 +64,12 @@ h1 {
 
 .LocalMixerBoxGrid {
 	display: grid;
-	grid-template-columns: 50% 50%;
+	grid-template-columns: 33% 33% 33%;
 	grid-template-rows: 33% 33% 33%;
 	grid-template-areas: 
-		"topleft topright"
-		"midleft midright"
-		"bottomleft bottomright"
+		"topleft topmid topright"
+		"midleft midmid midright"
+		"bottomleft bottommid bottomright"
 }
 
 .LocalMixerBoxGridItem {
@@ -113,14 +113,53 @@ button {
 	border-radius: 4px;
 	/*background-color: #E6EBE0;*/
 	background: transparent;
-	transition: 0.3s;
 	border: transparent;
+
+	transition: 0.3s;
+}
+
+button:hover {
+	transform: scale(0.95);
+	background-color: #08090C;
+}
+
+.addPlayerButton, .removePlayerButton {
+	grid-area: s3;
+	float: left;
+
+	display: grid;
+	justify-items: center;
+	grid-template-rows: 30% 70%;
+}
+.removePlayerButton {
+	grid-area: s4;
+}
+
+.e55aa42d-b85b-40e2-95ba-52275079081a {
+	width: auto;
+	height: 100px;
+}
+.b60aa51c-2c3e-4161-9950-a32939b38f35 {
+	width: 100px;
+	height: auto;
+	margin-top: 40px;
+}
+.e457aa97-ba7b-42cd-b90c-7f0e2c0d7811 {
+	fill:#cb6565;
+}
+.ffc586fc-c668-4291-8e9b-81430c4ef233 {
+	fill: #6ba353;
+}
+
+.updateButton, .fadeInButton, .fadeOutButton {
+	border: 3px ;
 }
 
 .updateButton {
 	grid-area: update;
 
 	margin-left: 7px;
+	align-content: center;
 }
 
 .fadeInButton {
@@ -133,18 +172,28 @@ button {
 	margin-right: 7px;
 }
 
-button:hover {
-	transform: scale(0.95);
-	background-color: #08090C;
-}
-
 .VideoIDContainer {
 	grid-area: vID;
 	display: flex;
-	justify-content: center;
+	justify-content: left;
 
-	width: 200px;
+	width: 300px;
+
 }
+
+.VideoIDInput {
+	background: #08090C;
+	border: transparent;
+	color: #E6EBE0;
+	border-radius: 6px;
+
+	transition: 0.3s;
+}
+
+.VideoIDInput:hover, .VideoIDInput:focus {
+	transform: scale(1.2);
+}
+
 
 .sliderContainer {
 	display: flex;
@@ -152,12 +201,12 @@ button:hover {
 	grid-area: volume;
 
 	margin: 7px;
-	background: #2F353D;
+	background: #2a2e3b;
 	border-radius: 7px;
 	filter: drop-shadow(3px 3px 3px #080E14);
 }
 
-input.slider {
+.VolumeSlider {
 	transform: rotate(270deg);
 }
 

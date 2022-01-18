@@ -1,7 +1,7 @@
 var PlayerHolder = [];
 var container = document.getElementById('PlayerHolderContainer');
 
-for(var i = 0; i < 6; i++) {
+for(var i = 0; i < 9; i++) {
 
 	PlayerHolder.push(
 		{div: document.createElement('div'),

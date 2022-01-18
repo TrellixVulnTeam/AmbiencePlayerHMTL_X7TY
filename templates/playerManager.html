@@ -17,9 +17,19 @@
 	<div class="AmbiencePlayerBox">
 		<div class="HeaderBox" id="HeaderBox" style="grid-area: HeaderBox">
 			<h1>Ambience Player</h1>
-			<button onclick="addPlayer()">Add Player</button>
-			<button onclick="removePlayer()">Remove Player</button>
-			<!-- <button onclick="loadPlayers()">DEBUG: load Players</button> -->
+			<rect style="grid-area: s2" width="300" height="1"></rect>
+			<button class="addPlayerButton" onclick="addPlayer()" style="">
+				<p>Add Player</p>
+				<svg class="e55aa42d-b85b-40e2-95ba-52275079081a" data-name="PlusSign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+						<path class="ffc586fc-c668-4291-8e9b-81430c4ef233" d="M428.21,215H292.29a7.29,7.29,0,0,1-7.29-7.29V71.79a7.29,7.29,0,0,0-7.29-7.29H222.29A7.29,7.29,0,0,0,215,71.79V207.71a7.29,7.29,0,0,1-7.29,7.29H71.79a7.29,7.29,0,0,0-7.29,7.29v55.42A7.29,7.29,0,0,0,71.79,285H207.71a7.29,7.29,0,0,1,7.29,7.29V428.21a7.29,7.29,0,0,0,7.29,7.29h55.42a7.29,7.29,0,0,0,7.29-7.29V292.29a7.29,7.29,0,0,1,7.29-7.29H428.21a7.29,7.29,0,0,0,7.29-7.29V222.29A7.29,7.29,0,0,0,428.21,215Z" transform="translate(-6.45 -6.45)"/>
+				</svg>
+			</button>
+			<button class="removePlayerButton" onclick="removePlayer()" style="float: left; grid-area: s4; height: 145px">
+				<p>Remove Player</p>
+				<svg class="b60aa51c-2c3e-4161-9950-a32939b38f35" data-name="PlusSign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.9 3">
+					<rect class="e457aa97-ba7b-42cd-b90c-7f0e2c0d7811" width="15.9" height="3" rx="0.3"/>
+				</svg>
+			</button>
 		</div>
 		<div class="LocalMixerBox" id="LocalMixerBox" style="grid-area: LocalMixerBox">
 			<div class="LocalMixerBoxGrid" id="LocalMixerBoxGrid">
@@ -39,11 +49,11 @@
 		<div class="LocalMixerBoxGridItem">
 			<div id="LocalPlayer" class="LocalPlayer" ></div>
 			<div id="sliderContainer" class="sliderContainer">
-				<input id="VolumeSlider" class="slider" type="range" min="0" max="100" value="50" oninput="updateVolume()" onchange="updateVolume()">
+				<input id="VolumeSlider" class="VolumeSlider" type="range" min="0" max="100" value="50" oninput="updateVolume()" onchange="updateVolume()">
 			</div>
 			<button id="updateButton" class="updateButton" onclick="updateVideo()">Update</button>
 			<div class="VideoIDContainer" style="grid-area: vID">
-				<input id="VideoIDInput" type="text" style="width: auto"></input>
+				<input id="VideoIDInput" class="VideoIDInput" type="text" style="width: auto" placesholder="Video ID ..."></input>
 			</div>
 			<button id="fadeInButton" class="fadeInButton" onclick="fadeIn()">Fade In</button>
 			<button id="fadeOutButton" class="fadeOutButton" onclick="fadeOut()">Fade Out</button>
@@ -51,10 +61,10 @@
 	</template>
 </body>
 
-<!-- JS for Managing Players -->
-<script src="{{url_for('static', filename='playerManager.js')}}"></script>
-
 <!-- JS Loading YT PLayers -->
 <script src="{{url_for('static', filename='playerLoader.js')}}"></script>
+
+<!-- JS for Managing Players -->
+<script src="{{url_for('static', filename='playerManager.js')}}"></script>
 
 </html>
