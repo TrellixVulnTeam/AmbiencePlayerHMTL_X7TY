@@ -144,7 +144,6 @@ function updateVideo() {
 	} else {
 		videoID = videoIdContainer.value;
 	}
-
 		 
 	try {
 		PlayerHolder[currentMixer[1]].div.loadVideoById(videoID);
