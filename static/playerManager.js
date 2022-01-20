@@ -138,9 +138,16 @@ function updateVideo() {
 
 	let currentMixer = getCurrentMixer(event.srcElement);
 	let videoIdContainer = currentMixer[0].children[2].firstElementChild;
+	let videoID;
+	if (videoIdContainer.value.includes("youtube")) {
+		videoID = videoIdContainer.value.match(/(?:youtu\.be\/|youtube\.com(?:\/embed\/|\/v\/|\/watch\?v=|\/user\/\S+|\/ytscreeningroom\?v=))([\w\-]{10,12})\b/)[1];
+	} else {
+		videoID = videoIdContainer.value;
+	}
+
 		 
 	try {
-		PlayerHolder[currentMixer[1]].div.loadVideoById(videoIdContainer.value);
+		PlayerHolder[currentMixer[1]].div.loadVideoById(videoID);
 	} catch (e) {
 		alert(e);
 	}

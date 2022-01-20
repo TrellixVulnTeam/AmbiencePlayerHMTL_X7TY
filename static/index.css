@@ -1,8 +1,23 @@
 body {
+	background: black;
+}
+
+.background-image {
+	position: absolute;
+	width: 100vw;
+	height: 100vw;
+  	z-index: 1;
+  	background: url('ruslan-safiullin-keca.jpg') no-repeat top center;
+  	filter: blur(5px);
+}
+
+.content {
+	position: absolute;
+	right: 50vw;
+  	z-index: 2;
 	font-family: Arial;
 	color: White;
 	text-align: center;
-	background-color: black;
-	background: url('ruslan-safiullin-keca.jpg') no-repeat top center;
+
 }
 

@@ -123,6 +123,10 @@ button:hover {
 	background-color: #08090C;
 }
 
+.btncontent {
+	margin: 5px;
+}
+
 .addPlayerButton, .removePlayerButton {
 	grid-area: s3;
 	float: left;
@@ -152,7 +156,7 @@ button:hover {
 }
 
 .updateButton, .fadeInButton, .fadeOutButton {
-	border: 3px ;
+	border: 3px;
 }
 
 .updateButton {
@@ -178,7 +182,6 @@ button:hover {
 	justify-content: left;
 
 	width: 300px;
-
 }
 
 .VideoIDInput {
