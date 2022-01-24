@@ -35,7 +35,7 @@ h1 {
 		"LocalMixerBox LocalMixerBox"
 }
 
-.HeaderBox {;
+.HeaderBox {
 	grid-area: HeaderBox;
 	display: grid;
 	align-items: center;
