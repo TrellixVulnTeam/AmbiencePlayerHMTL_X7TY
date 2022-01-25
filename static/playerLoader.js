@@ -25,7 +25,7 @@ function onYouTubeIframeAPIReady() {
 		var ytPlayer = new YT.Player(PlayerHolder[i].div.getAttribute('id'), {
 			height: '256',
 			width: '486',
-			videoId: 'KecVJnJcSI4'
+			videoId: 'KecVJnJcSI4',
 			});
 
 		PlayerHolder[i].div = ytPlayer;

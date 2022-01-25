@@ -84,6 +84,7 @@ function addPlayer() {
 
 						document.getElementById(playerSlotID).parentElement.appendChild(newChild);
 						document.getElementById(playerSlotID).remove();
+
 					} catch (e) {
 						alert(e);
 						return;
@@ -215,19 +216,3 @@ function fadeOut() {
 	}
 	handler = window.setInterval(decrease, 50);
 }
-
-/*
-function easeIn(x, endValue) {
-
-	function scale(number, inMin, inMax, outMin, outMax) {
-
-		return (number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
-	}
-
-	x = x/100;
-	let result = ((1 / 2) * (Math.log10(x + (1 / 100)))) + 1;
-	result = result*100;
-	console.log('3 ' + x + ' | ' + result);
-	return result;
-}
-*/
