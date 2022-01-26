@@ -115,7 +115,7 @@ button {
 	letter-spacing: 1px;
 
 	color: #E6EBE0;
-	margin: 4px;
+	margin: auto;
 	border-radius: 4px;
 	/*background-color: #E6EBE0;*/
 	background: transparent;
@@ -130,7 +130,7 @@ button:hover {
 }
 
 .btncontent {
-	margin: 5px;
+	margin: auto;
 }
 
 .addPlayerButton, .removePlayerButton {
@@ -168,7 +168,6 @@ button:hover {
 .updateButton {
 	grid-area: update;
 
-	margin-left: 7px;
 	align-content: center;
 }
 
@@ -178,8 +177,6 @@ button:hover {
 
 .fadeOutButton {
 	grid-area: fOut;
-
-	margin-right: 7px;
 }
 
 .VideoIDContainer {
@@ -216,13 +213,13 @@ button:hover {
 }
 
 .VolumeSlider {
-	top: 50px;
-
 	writing-mode: bt-lr; /* IE */
     -webkit-appearance: slider-vertical; /* WebKit */
     width: 8px;
     height: 175px;
     padding: 0 5px;
+	
+	margin: auto;
 }
 
 /* GLOBALMIXER */
