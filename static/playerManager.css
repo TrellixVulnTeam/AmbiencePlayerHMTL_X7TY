@@ -1,7 +1,7 @@
 /* GENERAL */
 
 /*
-off-black: #1D1D1B
+off-black: #12141A
 off-white: #E6EBE0
 */
 
@@ -87,7 +87,14 @@ h1 {
 	padding: 5px;
 	background-color: #181A22;
 	border-radius: 7px;
-	filter: drop-shadow(5px 5px 3px #080E14);
+	filter: drop-shadow(0px 0px 5px #080E14);
+
+	transition: .2s;
+}
+
+.LocalMixerBoxGridItem:hover {
+	transform: scale(1.05);
+	filter: drop-shadow(0px 0px 10px #99b7d4);
 }
 
 .LocalPlayer {
@@ -95,7 +102,6 @@ h1 {
 
 	margin: 7px;
 	border-radius: 7px;
-	filter: drop-shadow(3px 3px 3px #080E14);
 }
 
 /* BUTTONS  */
@@ -206,11 +212,17 @@ button:hover {
 	margin: 7px;
 	background: #2a2e3b;
 	border-radius: 7px;
-	filter: drop-shadow(3px 3px 3px #080E14);
+	filter: drop-shadow(0px 0px 5px #080e14);
 }
 
 .VolumeSlider {
-	transform: rotate(270deg);
+	top: 50px;
+
+	writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* WebKit */
+    width: 8px;
+    height: 175px;
+    padding: 0 5px;
 }
 
 /* GLOBALMIXER */
