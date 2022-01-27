@@ -40,8 +40,8 @@ h1 {
 	display: grid;
 	align-items: center;
 	justify-content: center;
-	grid-template-columns: 33% 13% 10% 10%;
-	grid-template-areas: "s1 s2 s3 s4";
+	grid-template-columns: 23% 13% 10% 10% 10%;
+	grid-template-areas: "s1 s2 s3 s4 s5";
 }
 
 .LocalMixerBox {
@@ -133,33 +133,39 @@ button:hover {
 	margin: auto;
 }
 
-.addPlayerButton, .removePlayerButton {
+.addPlayerButton, .removePlayerButton, .openLibButton {
 	grid-area: s3;
 	float: left;
 
 	display: grid;
-	justify-items: center;
-	grid-template-rows: 30% 70%;
+	justify-content: center;
+	grid-template-rows: 50px 100px;
 }
 .removePlayerButton {
 	grid-area: s4;
 }
-
-.e55aa42d-b85b-40e2-95ba-52275079081a {
-	width: auto;
-	height: 100px;
+.openLibButton {
+	grid-area: s5;
 }
-.b60aa51c-2c3e-4161-9950-a32939b38f35 {
+
+
+.e55aa42d-b85b-40e2-95ba-52275079081a, .b26015b7-2e33-4703-831c-2a76e765856f, .b60aa51c-2c3e-4161-9950-a32939b38f35 /*Plus*/{
 	width: 100px;
 	height: auto;
-	margin-top: 40px;
+	display: inline-block;
+	margin: auto;
 }
-.e457aa97-ba7b-42cd-b90c-7f0e2c0d7811 {
+
+.e457aa97-ba7b-42cd-b90c-7f0e2c0d7811 /*Plus*/{
 	fill:#cb6565;
 }
-.ffc586fc-c668-4291-8e9b-81430c4ef233 {
+.ffc586fc-c668-4291-8e9b-81430c4ef233 /*Minus*/{
 	fill: #6ba353;
 }
+.ec6255a0-8bb8-4953-9675-7300ccf5f92b /*Lib*/{
+	fill: #f7931e;
+}
+
 
 .updateButton, .fadeInButton, .fadeOutButton, .deleteButton {
 	border: 3px black;
