@@ -93,8 +93,8 @@ h1 {
 }
 
 .LocalMixerBoxGridItem:hover {
-	transform: scale(1.05);
-	filter: drop-shadow(0px 0px 10px #99b7d4);
+	transform: scale(1.01);
+	filter: drop-shadow(0px 0px 7px #99b7d4);
 }
 
 .LocalPlayer {
@@ -147,7 +147,6 @@ button:hover {
 .openLibButton {
 	grid-area: s5;
 }
-
 
 .e55aa42d-b85b-40e2-95ba-52275079081a, .b26015b7-2e33-4703-831c-2a76e765856f, .b60aa51c-2c3e-4161-9950-a32939b38f35 /*Plus*/{
 	width: 100px;
@@ -234,9 +233,43 @@ button:hover {
 /* GLOBALMIXER */
 
 /* MISCFEATURES */
-#libraryEmbed {
-	width: 600px;
-	height:  300px;
+.libraryBox {
+	transition: .5s;
+	opacity: 0;
+	position: absolute;
+	z-index: 1000;
+	width: 100%;
+	height: 100%;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-	border-radius: 7px;
+	background-color: rgba(18, 20, 26, .3);
+}
+
+.closeLibBtn {
+	position: absolute;
+	z-index: 1001;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	top: 8%;
+	right: 8%;
+	background-color: #E6EBE0;
+	border-radius: 3px;
+}
+
+.closeBtn {
+	fill: #E6EBE0;
+}
+
+.closeBtn:hover {
+	fill: transparent;
+}
+
+.lib {
+	border-radius: 20px;
 }

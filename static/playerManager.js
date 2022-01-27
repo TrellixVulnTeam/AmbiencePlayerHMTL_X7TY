@@ -226,3 +226,13 @@ function fadeOut() {
 	}
 	handler = window.setInterval(decrease, 50);
 }
+
+function openLib() {
+	document.getElementById('libraryBox').style.setProperty('display', 'flex');
+	setTimeout(() => document.getElementById('libraryBox').style.setProperty('opacity', '1'), 5);
+}
+
+function closeLib() {
+	setTimeout(() => document.getElementById('libraryBox').style.setProperty('display', 'none'), 500)
+	document.getElementById('libraryBox').style.setProperty('opacity', '0');
+}

@@ -14,6 +14,17 @@
 <link rel="stylesheet" href="{{url_for('static', filename='playerManager.css')}}">
 
 <body>
+
+	<div class="libraryBox" id="libraryBox" style="display: none;">
+		<button id="closeLibBtn" class="closeLibBtn" onclick="closeLib()">
+			<svg class="cloesBtn" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+				<path class="cloesBtn" d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"/>
+			</svg>
+		</button>
+		<iframe class="lib" id="lib" width="1500" height="800" src="https://miro.com/app/live-embed/o9J_kiyZJm0=/?moveToViewport=-2495,-951,950,459" frameBorder="0" scrolling="no" allowFullScreen></iframe>
+	</div>
+
+
 	<div class="AmbiencePlayerBox">
 		<div class="HeaderBox" id="HeaderBox" style="grid-area: HeaderBox">
 			<h1>Ambience Player</h1>
