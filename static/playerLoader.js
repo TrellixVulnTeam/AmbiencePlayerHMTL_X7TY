@@ -4,7 +4,9 @@ var container = document.getElementById('PlayerHolderContainer');
 for(var i = 0; i < 9; i++) {
 
 	PlayerHolder.push(
-		{div: document.createElement('div'),
+		{
+		id: i,
+		div: document.createElement('div'),
 		isAvailable: true
 		});
 	PlayerHolder[i].div.setAttribute('id', 'player' + i);

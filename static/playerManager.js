@@ -4,11 +4,10 @@ function getPlayerCount() {
 	return PlayersCount;
 }
 
-function getNextPlayerPosition() {
+function getNextPlayerPosition(nextID) {
 
-	let count = getPlayerCount();
 	let nextPosition = "";
-	switch(count) {
+	switch(nextID) {
 	case 0:
 		nextPosition = "topleft";
 		break;
@@ -47,11 +46,19 @@ function getNextPlayerPosition() {
 
 function addPlayer() {
 
+	let i = 0;
+	while (i < PlayerHolder.length) {
+		if (PlayerHolder[i].isAvailable == true) {
+			break;
+		}
+		i++;
+	}
+
 	//Loading HTML Template
 	var temp = document.getElementById("LocalMixerBoxGridItemTEMPLATE").content;
 	var toImport = document.importNode(temp, true);
 
-	if(getNextPlayerPosition() == "none") {
+	if(getNextPlayerPosition(i) == "none") {
 
 		alert("No more Player Slots available");
 
@@ -61,7 +68,7 @@ function addPlayer() {
 		var PlayerItem = toImport.firstElementChild;
 		PlayerItem.setAttribute('id', 'slot' + getPlayerCount());
 		PlayerItem.setAttribute('style', '')
-		PlayerItem.style.setProperty('grid-area', getNextPlayerPosition());
+		PlayerItem.style.setProperty('grid-area', getNextPlayerPosition(i));
 		document.getElementById("LocalMixerBoxGrid").appendChild(toImport);
 
 		//Assigning PlayerID
@@ -71,35 +78,14 @@ function addPlayer() {
 		playerSlot.setAttribute('id', playerSlotID);
 
 		//Pickping & Replacing player from PlayerHolder
-		var i = 0
-		while(i < PlayerHolder.length) {
-					   
-		   	try {
-			
-				if (PlayerHolder[i].isAvailable == true) {
-					try {
-						var currentChild = document.getElementById(playerSlotID);
-						var newChild = document.getElementById('PlayerHolderContainer').querySelector("#player" + i);
-						newChild.setAttribute('class', 'LocalPlayer');
+		var currentChild = document.getElementById(playerSlotID);
+		var newChild = document.getElementById('PlayerHolderContainer').querySelector("#player" + i);
+		newChild.setAttribute('class', 'LocalPlayer');
 
-						document.getElementById(playerSlotID).parentElement.appendChild(newChild);
-						document.getElementById(playerSlotID).remove();
-
-					} catch (e) {
-						alert(e);
-						return;
-					}
-						    
-				  	PlayerHolder[i].isAvailable = false;
-				  	i++;
-				  	return;
-				  	}
-				i++;
-		    } catch (e) {
-		    	alert(e);
-		    	return;
-		    }
-		}
+		document.getElementById(playerSlotID).parentElement.appendChild(newChild);
+		document.getElementById(playerSlotID).remove();
+		    
+	  	PlayerHolder[i].isAvailable = false;
 	}
 }
 
@@ -116,6 +102,24 @@ function removePlayer() {
 	}
 	 
 	PlayerHolder[(getPlayerCount() - 1)].isAvailable = true;
+	toRemove.remove();
+}
+
+function deletePlayer() {
+
+	let removeID = getCurrentMixer(event.srcElement);
+	let toRemove = removeID[0];
+	console.log(removeID);
+	console.log(toRemove);
+		 
+	try {
+		document.getElementById('PlayerHolderContainer').appendChild(toRemove.children[toRemove.children.length - 1]);
+	} catch (e) {
+		alert(e);
+		return;
+	}
+	 
+	PlayerHolder[removeID[1]].isAvailable = true;
 	toRemove.remove();
 }
 
