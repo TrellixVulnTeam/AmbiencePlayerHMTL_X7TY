@@ -49,8 +49,10 @@ function addPlayer() {
 	let i = 0;
 	while (i < PlayerHolder.length) {
 		if (PlayerHolder[i].isAvailable == true) {
+			console.log(PlayerHolder[i], i + ' was avilable')
 			break;
 		}
+		console.log('not available ' + i);
 		i++;
 	}
 
@@ -66,19 +68,21 @@ function addPlayer() {
 
 		//Placing HTML element;
 		var PlayerItem = toImport.firstElementChild;
-		PlayerItem.setAttribute('id', 'slot' + getPlayerCount());
+		PlayerItem.setAttribute('id', 'slot' + i);
 		PlayerItem.setAttribute('style', '')
 		PlayerItem.style.setProperty('grid-area', getNextPlayerPosition(i));
 		document.getElementById("LocalMixerBoxGrid").appendChild(toImport);
 
 		//Assigning PlayerID
-		var newLocalMixer = document.getElementById('slot' + (getPlayerCount() - 1));
+		var newLocalMixer = document.getElementById('slot' + i);
 		var playerSlot = newLocalMixer.querySelector('#LocalPlayer');
 		var playerSlotID = "playerSlot" + playerSlot.parentElement.getAttribute('id');
 		playerSlot.setAttribute('id', playerSlotID);
 
 		//Pickping & Replacing player from PlayerHolder
-		var currentChild = document.getElementById(playerSlotID);
+		console.log(document.getElementById('PlayerHolderContainer'));
+		console.log("#player" + i);
+		console.log(document.getElementById('PlayerHolderContainer').querySelector("#player" + i));
 		var newChild = document.getElementById('PlayerHolderContainer').querySelector("#player" + i);
 		newChild.setAttribute('class', 'LocalPlayer');
 
@@ -91,17 +95,19 @@ function addPlayer() {
 
 function removePlayer() {
 
-	let removeID = 'slot' + (getPlayerCount() - 1);
-	let toRemove = document.getElementById(removeID);
-		 
-	try {
-		document.getElementById('PlayerHolderContainer').appendChild(toRemove.children[toRemove.children.length - 1]);
-	} catch (e) {
-		alert(e);
-		return;
+	let PHreversed = Array.from(PlayerHolder.reverse());
+	PlayerHolder.reverse()
+	let i = 0;
+	while (PHreversed[i].isAvailable != false) {
+		i++;
 	}
-	 
-	PlayerHolder[(getPlayerCount() - 1)].isAvailable = true;
+	let lastPlayer = PHreversed[i];
+	console.log(lastPlayer);
+	let toRemove = getCurrentMixer(lastPlayer.div['h'])[0];
+
+	document.getElementById('PlayerHolderContainer').appendChild(lastPlayer.div['h']);
+
+	lastPlayer.isAvailable = true;
 	toRemove.remove();
 }
 
