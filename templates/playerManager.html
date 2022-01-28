@@ -57,6 +57,10 @@
 			
 		</div>
 		<div class="miscFeatures" id="miscFeatures" style="grid-area: miscFeatures">
+			<button class="crossFadeButton" onclick="crossFade()">
+				<p>Crossfade</p>
+				
+			</button>
 		</div>
 	</div>
 	<div id="PlayerHolderContainer" class="PlayerHolderContainer" style="display: none;">
@@ -65,7 +69,7 @@
 	<template id="LocalMixerBoxGridItemTEMPLATE">
 		<div class="LocalMixerBoxGridItem">
 			<div id="LocalPlayer" class="LocalPlayer" ></div>
-			<div id="sliderContainer" class="sliderContainer">
+			<div id="sliderContainer" class="sliderContainer" onclick="toggleSelection()">
 				<input id="VolumeSlider" class="VolumeSlider" type="range" min="0" max="100" value="50" oninput="updateVolume()" onchange="updateVolume()" orient="vertical">
 			</div>
 			<button id="updateButton" class="updateButton" onclick="updateVideo()"><span class="btncontent">Update</span></button>
