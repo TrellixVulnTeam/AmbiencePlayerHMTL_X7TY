@@ -151,8 +151,12 @@ button:hover {
 	grid-area: s5;
 }
 
+.crossFadeButon {
+	grid-area: GlobalMixer;
+}
 
-.e55aa42d-b85b-40e2-95ba-52275079081a, .b26015b7-2e33-4703-831c-2a76e765856f, .b60aa51c-2c3e-4161-9950-a32939b38f35 {
+
+.e55aa42d-b85b-40e2-95ba-52275079081a, .b26015b7-2e33-4703-831c-2a76e765856f, .b60aa51c-2c3e-4161-9950-a32939b38f35, .f5cec51e-11c9-41fa-9c3b-292fd05bacff {
 	width: 100px;
 	height: auto;
 	display: inline-block;
@@ -167,6 +171,12 @@ button:hover {
 }
 .ec6255a0-8bb8-4953-9675-7300ccf5f92b /*Lib*/{
 	fill: #f7931e;
+}
+.f06c2fea-1780-43b6-8bd0-cf3406385336 {
+	fill:#d53a3a;
+}
+.e9e0b8dc-fe13-4ac9-a768-aeeb51a77eef {
+	fill:#3b8ad4;
 }
 
 .libraryBox {

@@ -55,8 +55,14 @@ function removePlayer() {
 		i++;
 	}
 	let lastPlayer = PHreversed[i];
-	console.log(lastPlayer);
 	let toRemove = getCurrentMixer(lastPlayer.div['h'])[0];
+	// let toRemoveVolControl = toRemove.querySelector('#sliderContainer');
+	// console.log(toRemove);
+
+	// console.log(selectedMixer.includes(toRemoveVolControl), selectedMixer.indexOf(toRemoveVolControl));
+	// if(selectedMixer.includes(toRemoveVolControl)) {
+	// 	selectedMixer = selectedMixer.slice(selectedMixer.indexOf(toRemoveVolControl), 1);
+	// }
 
 	document.getElementById('PlayerHolderContainer').appendChild(lastPlayer.div['h']);
 
@@ -93,6 +99,12 @@ function closeLib() {
 }
 
 function toggleSelection() {
+
+	for(var i = 0; i < selectedMixer.length; i++) {
+		if(!Array.from(document.getElementsByClassName('sliderContainer')).includes(selectedMixer[i])) {
+			selectedMixer.splice(i, 1);
+		}
+	}
 
 	function refreshColors() {
 		if(selectedMixer[0]) {
